@@ -8,7 +8,7 @@ int main(){
 
     printf("Welcome\n");
     printf(" To\n");
-    printf("Municipal Financial Managemet Systems\n\n");
+    printf("\nMunicipal Financial Managemet Systems\n");
 
     printf("Enter Municipality name: \n");
     scanf("%59s", Municip_name);
