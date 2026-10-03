@@ -40,7 +40,7 @@ gcc -std=c99 -Wall -Wextra -pedantic main.c employees.c budget.c suppliers.c ass
 
 **Windows:**
 
-```powershell or cmd
+```powershell 
 .\mfms.exe
 ```
 
