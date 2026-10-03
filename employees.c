@@ -15,17 +15,33 @@ void AddEmployee() {
     strcspn(emp[employee_count].name, "\n")
 ] = '\0';
 
-
     printf("Enter the employee's ID: ");
     scanf("%d", &emp[employee_count].ID);
+
     printf("Enter the employee's department: ");
     scanf("%s", emp[employee_count].department);
+
     printf("Enter the employee's basic salary: ");
     scanf("%f", &emp[employee_count].basic_salary);
+    while(emp[employee_count].basic_salary < 0) {
+        printf("Basic salary cannot be negative. Please enter a valid amount: ");
+        scanf("%f", &emp[employee_count].basic_salary);
+    }
+
     printf("Enter the employee's housing allowance: ");
     scanf("%f", &emp[employee_count].housing_allowance);
+    while(emp[employee_count].housing_allowance < 0) {
+        printf("Housing allowance cannot be negative. Please enter a valid amount: ");
+        scanf("%f", &emp[employee_count].housing_allowance);
+    }
+
     printf("Enter the employee's transport allowance: ");
     scanf("%f", &emp[employee_count].transport_allowance);
+
+    while(emp[employee_count].transport_allowance < 0) {
+        printf("Transport allowance cannot be negative. Please enter a valid amount: ");
+        scanf("%f", &emp[employee_count].transport_allowance);
+    }
     printf("Employee added successfully.\n");
     printf("-------------------------\n");
     employee_count++;
