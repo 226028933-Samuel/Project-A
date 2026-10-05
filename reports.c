@@ -1,7 +1,9 @@
 #include <stdio.h>
-#include "Report.h"
+#include "Reports.h"
 #include "employees.h"
 #include "budget.h"
+#include "supplier.h"
+
 
 /*
  * Access the employee and budget arrays
