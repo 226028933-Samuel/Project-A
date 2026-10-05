@@ -1,66 +1,56 @@
 #include <stdio.h>
-#include <string.h>
+#include "assets.h"
 
-#define MAX_ASSETS 100   // maximum number of assets
 
-// Define a struct for assets
-typedef struct {
-    int assetId;
-    char assetName[50];
-    char assetType[50];
-    float purchaseValue;
-    char department[20];
-    char condition[20];
-} Asset;
 
-int main() {
-    Asset assets[MAX_ASSETS];
-    int count = 0;   // number of assets stored
-    int choice;
+void assetMenu() {
+    struct Asset assets[MAX_ASSETS];
+    int asset_count = 0;   // number of assets stored
+    int asset_choice;
 
     do {
         printf("\n//////////////////ASSET MANAGEMENT//////////////////\n");
         printf("1. Add Asset\n");
         printf("2. Search Asset by ID\n");
         printf("3. Search Asset by Name\n");
-        printf("4. Exit\n");
-        printf("5. Display All Assets\n");   // new option
-        printf("Enter choice: ");
-        scanf("%d", &choice);
+        printf("4. Display All Assets\n");   // new option
+        printf("5. Exit\n");
+        printf("Enter asset_choice: ");
+        scanf("%d", &asset_choice);
 
-        if (choice == 1) {
-            if (count < MAX_ASSETS) {
+        if (asset_choice == 1) {
+            if (asset_count < MAX_ASSETS) {
                 printf("Input asset id: ");
-                scanf("%d", &assets[count].assetId);
+                scanf("%d", &assets[asset_count].assetId);
 
                 printf("Enter asset name: ");
-                scanf("%49s", assets[count].assetName);
+                scanf("%49s", assets[asset_count].assetName);
 
                 printf("Enter asset type: ");
-                scanf("%49s", assets[count].assetType);
+                scanf("%49s", assets[asset_count].assetType);
 
                 printf("Enter purchase value: ");
-                scanf("%f", &assets[count].purchaseValue);
+                scanf("%f", &assets[asset_count].purchaseValue);
 
                 printf("Enter Department: ");
-                scanf("%19s", assets[count].department);
+                scanf("%19s", assets[asset_count].department);
 
                 printf("Enter condition (good/bad): ");
-                scanf("%19s", assets[count].condition);
+                scanf("%19s", assets[asset_count].condition);
 
-                count++;
+                asset_count++;
                 printf("Asset added successfully!\n");
             } else {
                 printf("Asset storage full!\n");
             }
         } 
-        else if (choice == 2) {
+        else if (asset_choice == 2) {
             int searchId;
             printf("Enter asset ID to search: ");
             scanf("%d", &searchId);
 
             int found = 0;
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < asset_count; i++) {
                 if (assets[i].assetId == searchId) {
                     printf("\nAsset Found:\n");
                     printf("ID: %d\n", assets[i].assetId);
@@ -75,13 +65,13 @@ int main() {
             }
             if (!found) printf("Asset not found.\n");
         } 
-        else if (choice == 3) {
+        else if (asset_choice == 3) {
             char searchName[50];
             printf("Enter asset name to search: ");
             scanf("%49s", searchName);
 
             int found = 0;
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < asset_count; i++) {
                 if (strcmp(assets[i].assetName, searchName) == 0) {
                     printf("\nAsset Found:\n");
                     printf("ID: %d\n", assets[i].assetId);
@@ -96,12 +86,12 @@ int main() {
             }
             if (!found) printf("Asset not found.\n");
         }
-        else if (choice == 5) {
-            if (count == 0) {
+        else if (asset_choice == 4) {
+            if (asset_count == 0) {
                 printf("No assets to display.\n");
             } else {
                 printf("\nAll Assets:\n");
-                for (int i = 0; i < count; i++) {
+                for (int i = 0; i < asset_count; i++) {
                     printf("ID: %d | Name: %s | Type: %s | Value: %.2f | Dept: %s | Condition: %s\n",
                            assets[i].assetId, assets[i].assetName, assets[i].assetType,
                            assets[i].purchaseValue, assets[i].department, assets[i].condition);
@@ -109,7 +99,7 @@ int main() {
             }
         }
 
-    } while (choice != 4);
+    } while (asset_choice != 5);
 
     printf("//////////////////////////END///////////////////////////////\n");
     return 0;

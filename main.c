@@ -5,7 +5,7 @@
 #include "budget.h"
 #include "Reports.h"
 #include "supplier.h"
-
+#include "assets.h"
 
 int main(){
 
@@ -115,7 +115,7 @@ int main(){
             break;
 
         case 4:
-
+            assetMenu();
                 break;
 
             case 5:
