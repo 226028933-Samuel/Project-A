@@ -6,13 +6,12 @@
 
 | Member    | Name                              | Responsibility                              |
 | --------- | --------------------------------- | --------------------------------------------|
-| Student 1 | Samuel Chimwamurombe 226028933    | Employee Management                         |
+| Student 1 | Samuel Chimwamurombe 226028933    | Employee Management & Git Coordination      |
 | Student 2 | Karl Shivolo 226081567            | Budget Management                           |
 | Student 3 | Justus Sheelekeni 225152924       | Supplier Management                         |
 | Student 4 | Risco Mazila 224053299            | Asset Management                            |
-| Student 5 | Diogo Carlvalho 225123258         | Reports                                     |
-| Student 6 |                                   | Functions, Integration and Validation       |
-| Student 7 |                                   | Testing, Documentation and Git Coordination |
+| Student 5 | Diogo Carlvalho 225123258         | Reports and Documentation                   |
+| Student 6 | Werner Nghituwamata 219096724     | Functions, Integration and Validation       |
 
 ## Project Description
 
